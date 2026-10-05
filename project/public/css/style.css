@@ -1,0 +1,188 @@
+* { 
+    box-sizing: border-box; 
+} 
+
+body { 
+    margin: 0; 
+    font-family: Arial, sans-serif; 
+    background: #f3f5f7; 
+    color: #222; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+} 
+
+/* Шапка сайта и навигация */
+header.header { 
+    background: #793f74; 
+    color: white; 
+    text-align: center; 
+    padding: 30px 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+} 
+
+header.header a.logo { 
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: bold;
+} 
+
+header.header nav {
+    display: flex;
+    gap: 20px;
+}
+
+header.header nav a {
+    color: #f0e6ef;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+header.header nav a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Основной контент */
+main.container { 
+    max-width: 1000px; 
+    width: 100%;
+    margin: 40px auto; 
+    padding: 0 20px; 
+    flex: 1;
+} 
+
+h1 { 
+    text-align: center; 
+    margin-bottom: 30px; 
+    color: #333;
+} 
+
+/* Сетка карточек */
+.cards { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+} 
+
+/* Карточка с эффектом свечения */
+.card { 
+    background: white; 
+    border: 1px solid #e2e8f0; 
+    border-radius: 12px; 
+    padding: 24px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} 
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(121, 63, 116, 0.5);
+    box-shadow: 0 10px 25px -5px rgba(121, 63, 116, 0.25), 
+                0 0 15px rgba(121, 63, 116, 0.2);
+}
+
+.card h3 { 
+    margin-top: 0; 
+    margin-bottom: 12px;
+} 
+
+.card h3 a {
+    color: #793f74; 
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.card h3 a:hover {
+    color: #592d55;
+    text-decoration: underline;
+}
+
+.card .meta { 
+    color: #666;
+    font-size: 14px;
+    margin: 0;
+} 
+
+/* Пустое состояние (согласно заданию) */
+.empty {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px dashed #ccc;
+}
+
+/* Кнопки и ссылки "Назад" со свечением */
+a.btn-back, 
+main.container a[href="/"] {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 16px;
+    background: #ffffff;
+    color: #793f74;
+    border: 1px solid #793f74;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+a.btn-back:hover, 
+main.container a[href="/"]:hover {
+    background: #793f74;
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(121, 63, 116, 0.35);
+}
+
+/* Состояния загрузки и ошибок */
+#loading { 
+    text-align: center; 
+    margin: 30px; 
+} 
+
+#error { 
+    text-align: center; 
+    color: #e53e3e; 
+    margin: 20px; 
+} 
+
+/* Подвал сайта */
+footer.footer { 
+    text-align: center; 
+    padding: 25px; 
+    color: #777; 
+    background: #eaedf0;
+    margin-top: auto;
+} 
+
+/* Адаптированность под планшеты и мобильные */
+@media (max-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) { 
+    .cards { 
+        grid-template-columns: 1fr; 
+    } 
+
+    header.header {
+        padding: 20px 15px;
+    }
+
+    header.header a.logo { 
+        font-size: 22px; 
+    } 
+}
